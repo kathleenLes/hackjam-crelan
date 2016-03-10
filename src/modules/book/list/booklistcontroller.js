@@ -1,6 +1,4 @@
-import bookFactory from './../services/bookservice.js'
-
-BookListController.$inject = [bookFactory];
+BookListController.$inject = ['BookFactory'];
 
 export default function BookListController(BookFactory) {
 

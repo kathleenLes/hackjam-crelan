@@ -1,7 +1,7 @@
 import angular from 'angular';
 import 'angular-mocks';
 
- let module = angular.module('bookstore.mocks', [ngMockE2E])
+ let module = angular.module('bookstore.mocks', ['ngMockE2E'])
   .run(function($httpBackend){
     $httpBackend.whenGET('/api/books').respond(getBooks());
 

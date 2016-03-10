@@ -1,6 +1,7 @@
 import angular from 'angular';
+import ngRoute from 'angular-route';
 
-let module = angular.module('bookstore.routes', []).config(RouteConfig);
+let module = angular.module('bookstore.routes', [ngRoute]).config(RouteConfig);
 
 export default module.name;
 

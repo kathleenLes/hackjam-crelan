@@ -1,6 +1,6 @@
 import angular from'angular';
 import bookstoreTemplate from './bookstore.html';
-//import navbar from './../nav/navBarDirective';
+import navbar from './../nav/navBarDirective';
 
   function bookstoreDirective(){
     return {
@@ -9,6 +9,6 @@ import bookstoreTemplate from './bookstore.html';
     };
   }
 
-let module = angular.module('common.shell', [/*navbar*/]).directive('bookstore', bookstoreDirective);
+let module = angular.module('common.shell', [navbar]).directive('bookstore', bookstoreDirective);
 export default module.name;
 
