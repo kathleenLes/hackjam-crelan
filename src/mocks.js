@@ -1,7 +1,7 @@
-(function(){
-  'use strict';
+import angular from 'angular';
+import 'angular-mocks';
 
-  angular.module('bookstore')
+ let module = angular.module('bookstore.mocks', [ngMockE2E])
   .run(function($httpBackend){
     $httpBackend.whenGET('/api/books').respond(getBooks());
 
@@ -18,6 +18,7 @@
 
     $httpBackend.whenGET().passThrough();
   });
+
 
   function getBooks(){
     return [
@@ -86,4 +87,5 @@
       }
     ];
   }
-})();
+
+export default module.name;

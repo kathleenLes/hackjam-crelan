@@ -1,27 +1,24 @@
-(function(){
-  'use strict';
+import angular from 'angular';
 
-    RouteConfig.$inject = ['$routeProvider'];
+let module = angular.module('bookstore.routes', []).config(RouteConfig);
 
-    function RouteConfig($routeProvider) {
-      $routeProvider
-        .when('/', {
-          templateUrl: './src/modules/book/list/book.html',
-          controller: 'BookListController',
-          controllerAs :'bookList'
-        })
-        .when('/books/add', {
-          templateUrl: './src/modules/book/add/add-book.html',
-          controller: 'BookAddController',
-          controllerAs: 'book'
-        })
-        .when('/books/:id', {
-          templateUrl: './src/modules/book/details/book-details.html',
-          controller: 'BookDetailsController',
-          controllerAs: 'book'
-        });
-    }
+export default module.name;
 
-    angular.module('book').config(RouteConfig);
-})();
+RouteConfig.$inject = ['$routeProvider'];
 
+function RouteConfig($routeProvider) {
+  $routeProvider
+    .when('/', {
+      template: '<cl-books></cl-books>'
+    })
+    .when('/books', {
+      template: '<cl-books></cl-books>'
+    })
+    .when('/books/:id', {
+      template: '<cl-book-detail></cl-book-detail>'
+    })
+    .when('/books/add', {
+      template: '<cl-book-add></cl-book-add>'
+    })
+    .otherwise('/');
+}

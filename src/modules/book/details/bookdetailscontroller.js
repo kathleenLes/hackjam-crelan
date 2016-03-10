@@ -1,20 +1,14 @@
-(function() {
-  'use strict';
+BookDetailsController.$inject = ['$routeParams', 'BookFactory'];
 
-  BookDetailsController.$inject = ['$routeParams','BookFactory'];
+export default function BookDetailsController($routeParams, BookFactory) {
 
-  function BookDetailsController($routeParams, BookFactory) {
+  if ($routeParams.id) {
 
-    if ($routeParams.id) {
+    BookFactory.getBook($routeParams.id)
+      .then(function (book) {
+        angular.extend(this, book);
+      }.bind(this));
 
-      BookFactory.getBook($routeParams.id)
-        .then(function(book){
-          angular.extend(this, book);
-        }.bind(this));
-
-    }
   }
+}
 
-  angular.module('book').controller('BookDetailsController',BookDetailsController);
-
-})();

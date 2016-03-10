@@ -1,9 +1,4 @@
-(function(){
-  'use strict';
-
-    function NavController() {
+export default function NavController() {
       this.title = "Book Store";
     }
 
-    angular.module('common').controller('NavController', NavController);
-})();

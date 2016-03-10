@@ -1,9 +1,8 @@
-(function() {
-  'use strict';
+import bookFactory from './../services/bookservice.js'
 
-    BookListController.$inject = ['BookFactory'];
+BookListController.$inject = [bookFactory];
 
-    function BookListController(BookFactory) {
+export default function BookListController(BookFactory) {
 
       BookFactory.getBooks()
         .then(function(books){
@@ -12,5 +11,3 @@
 
     }
 
-    angular.module('book').controller('BookListController', BookListController);
-})();
